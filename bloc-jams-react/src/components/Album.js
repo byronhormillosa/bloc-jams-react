@@ -5,5 +5,4 @@ const Album = () => (
     Album page will go here
   </section>
 );
-
 export default Album;
