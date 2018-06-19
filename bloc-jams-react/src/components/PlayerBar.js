@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
   class PlayerBar extends Component {
    render() {
+=======
+  
+class PlayerBar extends Component {
+   
+    render() {
+>>>>>>> checkpoint-15-blocjams-playerbarbuttons-feature
      return (
        <section className="player-bar">
          <section id="buttons">

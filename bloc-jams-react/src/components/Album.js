@@ -104,5 +104,10 @@ class Album extends Component {
      );
    }
  }
+<<<<<<< HEAD
  
 export default Album;
+=======
+
+ export default Album;
+>>>>>>> checkpoint-15-blocjams-playerbarbuttons-feature
