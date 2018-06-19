@@ -35,5 +35,4 @@ class PlayerBar extends Component {
      );
    }
  }
- 
  export default PlayerBar;
