@@ -104,14 +104,5 @@ class Album extends Component {
      );
    }
  }
-<<<<<<< HEAD
-<<<<<<< HEAD
- 
-export default Album;
-=======
 
- export default Album;
->>>>>>> checkpoint-15-blocjams-playerbarbuttons-feature
-=======
- export default Album;
->>>>>>> checkpoint-15-blocjams-playerbarbuttons-feature
+export default Album;
