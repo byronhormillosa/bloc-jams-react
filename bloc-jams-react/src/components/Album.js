@@ -15,11 +15,14 @@ class Album extends Component {
       currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration, 
-      isPlaying: false
-     };
+      isPlaying: false,
+      isHovered: false,
+      volume: 0.8,     
+   };
         
-     this.audioElement = document.createElement('audio');
-     this.audioElement.src = album.songs[0].audioSrc;    
+    this.audioElement = document.createElement('audio');
+    this.audioElement.src = album.songs[0].audioSrc;
+    this.audioElement.volume = this.state.volume;    
    }
     
     play() {
@@ -90,16 +93,32 @@ class Album extends Component {
    }
     
     componentWillUnmount() {
-     this.audioElement.src = null;
-     this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
-     this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
+      this.audioElement.src = null;
+      this.audioElement.removeEventListener('timeupdate', this.eventListeners.timeupdate);
+      this.audioElement.removeEventListener('durationchange', this.eventListeners.durationchange);
    }
     
     handleTimeChange(e) {
-     const newTime = this.audioElement.duration * e.target.value;
-     this.audioElement.currentTime = newTime;
-     this.setState({ currentTime: newTime });
+      const newTime = this.audioElement.duration * e.target.value;
+      this.audioElement.currentTime = newTime;
+      this.setState({ currentTime: newTime });
    }
+    
+    handleVolumeChange(e) {
+      const newVolume = e.target.value;
+      this.audioElement.volume = newVolume;
+    this.setState({ volume: newVolume });
+  }
+
+  formatTime(time) {
+    const songMin = Math.floor(time / 60);
+    const songSec = Math.floor(time % 60);
+    if (songSec < 10) {
+      return songMin + ":0" + songSec
+    } else {
+      return songMin + ":" + songSec
+    }
+  }
     
     render() {
      return (
@@ -125,7 +144,7 @@ class Album extends Component {
               onMouseLeave={() => this.setState({ isHovered: index })}>
                  <td className="song-number">{this.handleHover(song, index)}</td>
                  <td className="song-title">{song.title}</td>
-                 <td className="song-duration">{song.duration}</td>
+                 <td className="song-duration">{this.formatTime(song.duration)}</td>
                </tr>
                )}
            </tbody>
@@ -139,6 +158,9 @@ class Album extends Component {
            handlePrevClick={() => this.handlePrevClick()}
            handleNextClick={() => this.handleNextClick()}
            handleTimeChange={(e) => this.handleTimeChange(e)}
+           formatTime={(time) => this.formatTime(time)}
+           volume={this.audioElement.volume}
+           handleVolumeChange={(e) => this.handleVolumeChange(e)}
          />
        </section>
      );
