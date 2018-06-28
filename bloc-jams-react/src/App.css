@@ -1,28 +1,252 @@
-.App {
+* {
+  font-family: Helvetica, Roboto, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Header */
+
+body {
+  background: #000000;
+}
+
+nav {
+  float:right;
+  margin-right: 1rem;
+  height: 100%;
+}
+
+/* Landing.js */
+
+.logo {
+  
+  width: auto;
+  padding: 0rem;
+  height: 8rem;
+  left: 0;
+  
+  margin: 0;
+}
+
+.banner {
+  position: relative; 
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.banner-img {
+  max-width: 100%;
+  height: auto;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
+.hero-title {
+  text-shadow: 3px 3px 7px #FE01D4;
+  transform: translate(-50%, -100%);
+  font-size: 5rem;
+  color: #ffffff;
+  white-space: normal;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.selling-points {
+  color: #ffffff;
+  text-align: center;
+}
+
+.icon {
+  font-size: 6rem;
+  color: #FE01D4;
+}
+
+.point {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+ 
+  padding: 5rem;
+  justify-content: center;
+}
+
+/* Library.js*/
+
+.library {
+  width: 85%;
+  padding: 0 30rem;
+  margin: auto;
+}
+
+.album-link {
+  position: relative;
+  color: #ffffff;
+  display: inline-block;
+  margin: 3rem;
+  padding: 0.1rem;
+  width: fit-content;
+  text-align: center;
+  
+  transition: top ease 0.2s;
+}
+
+.album-link:hover {
+  top: -10px;
+  transition: 0.2s;
+}
+
+.album-link img {
+  width: 35rem;
+  
+}
+
+.album-name {
+  font-weight: bolder;
+  font-size: 115%;
+  margin: auto;
+  width: fit-content;
+}
+
+.album-artist {
+  color: #ffffff;
+  margin: auto;
+  width: fit-content;
+}
+
+/* PlayerBar.js */
+
+.player-bar {
+  
   color: white;
+  text-align: center;
+  
 }
 
-.App-title {
-  font-size: 1.5em;
+.volume-bar {
+  vertical-align: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.App-intro {
-  font-size: large;
+.volume-icon {
+  display: center;
+  
+  font-size: 2rem;
+  
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.seek-bar {
+  width: 40vw;
+  
+  display: center;
 }
+
+.time-left {
+  display: center;
+  padding-left: 0.5rem;
+}
+
+.play-icon, .player-icon {
+  font-size: 2rem;
+  margin: 0 rem;
+  cursor: pointer;
+}
+
+
+
+/* Album.js */
+
+button {
+  background: transparent;
+  color: #ffffff;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+.album {
+  white-space: nowrap;
+  overflow: hidden;
+    text-align: center;
+}
+
+
+
+.album-details {
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.song {
+  line-height: 3rem;
+  cursor: pointer;
+}
+
+.song .ion-play {
+  display: none;
+}
+
+.song .ion-pause {
+  
+  cursor: pointer;
+}
+
+.song:hover .ion-play {
+  
+  cursor: pointer;
+  display: inline;
+}
+
+.song-actions {
+  width: 2rem;
+  cursor: pointer;
+}
+
+.song-duration {
+  width: 5rem;
+}
+
+.song-list-container {
+  display: inline-block;
+  width: 80%;
+  margin: auto;
+  padding: 5rem;
+  vertical-align: top;
+}
+
+.artist, 
+#release-info {
+  color: #ffffff;
+  font-weight: 400;
+  margin: 0.5rem;
+}
+
+#album-info {
+  display: inline-block;
+  width: fit-content;
+  padding: 5rem 5rem 0 5rem;
+}
+
+#album-cover-art {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+#album-title {
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 0.5rem;
+}
+
+#song-list {
+  color: #fff;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+

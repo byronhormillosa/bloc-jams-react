@@ -130,6 +130,8 @@ class Album extends Component {
              <h2 className="artist">{this.state.album.artist}</h2>
              <div id="release-info">{this.state.album.releaseInfo}</div>
            </div>
+         
+         
          </section>
          <table id="song-list">
            <colgroup>
@@ -161,6 +163,7 @@ class Album extends Component {
            formatTime={(time) => this.formatTime(time)}
            volume={this.audioElement.volume}
            handleVolumeChange={(e) => this.handleVolumeChange(e)}
+           formattedTimeLeft={this.formatTime(this.audioElement.duration - Math.floor(this.audioElement.currentTime), true)}
          />
        </section>
      );
